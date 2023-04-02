@@ -57,7 +57,7 @@ class _MarvelCharactersState extends State<MarvelCharacters> {
                 child: ListTile(
                   leading: Image.network(imageUrl),
                   title: Text(character['name']),
-                  subtitle: Text(character['description'] ?? 'Descripción no disponible.'),
+                  subtitle: Text(character['description'].isNotEmpty ? character['description'] : 'Descripción no disponible.'),
                   onTap: () {
                     Navigator.push(
                       context,
