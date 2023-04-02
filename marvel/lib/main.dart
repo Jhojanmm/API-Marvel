@@ -57,7 +57,7 @@ class _MarvelCharactersState extends State<MarvelCharacters> {
                 child: ListTile(
                   leading: Image.network(imageUrl),
                   title: Text(character['name']),
-                  subtitle: Text(character['description'] ?? 'No description available.'),
+                  subtitle: Text(character['description'] ?? 'Descripción no disponible.'),
                   onTap: () {
                     Navigator.push(
                       context,
@@ -94,7 +94,14 @@ class CharacterDetails extends StatelessWidget {
             children: [
               Image.network(imageUrl),
               SizedBox(height: 16.0),
-              Text(character['description'] ?? 'Descripción no disponible')
+              Text(character['description'] ?? 'Descripción no disponible'),
+              SizedBox(height: 16.0),
+              Text('Top 1: ${character['series']['items'].isNotEmpty ? character['series']['items'][0]['name'] : 'No disponible'}'),
+              SizedBox(height: 16.0),
+              Text('Top 2: ${character['series']['items'].length > 1 ? character['series']['items'][1]['name'] : 'No disponible'}'),
+              SizedBox(height: 16.0),
+              Text('Top 3: ${character['series']['items'].length > 2 ? character['series']['items'][2]['name'] : 'No disponible'}'),              
+
             ],
           ),
         ),

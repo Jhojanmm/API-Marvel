@@ -10,7 +10,7 @@ Future<Map<String, dynamic>> getMarvelData() async {
     Map<String, dynamic> data = json.decode(response.body);
     return data;
   } else {
-    throw Exception('Failed to load data');
+    throw Exception('Error al cargar los datos');
   }
 }
 
